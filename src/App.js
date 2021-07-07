@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Cart from './components/Cart/Cart';
 import Navbar from './components/Navbar/Navbar';
 import Products from './components/Products/Products';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // grab commerce instance which will handle entire backend
 import { commerce } from './lib/commerce';
@@ -34,12 +35,21 @@ const App = () => {
     },[]);
 
     return (
+        <Router>
         <div>
             <Navbar totalItems={cart.total_items} />
-            <Products products={products} onAddToCart={handleAddToCart} />
-            <Cart cart={cart} />
+            <Switch>
+                <Route exact path="/" >
+                    <Products products={products} onAddToCart={handleAddToCart} />
+                </Route>
+                <Route exact path="/cart" >
+                    <Cart cart={cart} />
+                </Route>
+            </Switch>
         </div>
+        </Router>
     )
+
 }
 
 export default App;

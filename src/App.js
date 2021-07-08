@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Cart from "./components/Cart/Cart";
 import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Products/Products";
+import Checkout from "./components/Checkout/Checkout";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // grab commerce instance which will handle entire backend
@@ -67,6 +68,9 @@ const App = () => {
               handleRemoveFromCart={handleRemoveFromCart}
               handleEmptyCart={handleEmptyCart}
             />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </div>

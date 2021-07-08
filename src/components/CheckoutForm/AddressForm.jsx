@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   InputLabel,
   Select,
@@ -8,18 +8,18 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useForm, FormProvider } from "react-hook-form";
+import { commerce } from "../../lib/commerce"; /* this instance makes it possible to use all the features of commercejs */
 import FormInput from "./CustomTextField";
-import { useState } from "react";
 
 const AddressForm = () => {
-const [shippingCountries,setShippingCountries] = useState([]);
-const [shippingCountry,setShippingCountry] = useState('');
-const [shippingSubdivisions,setShippingSubdivisions] = useState([]);
-const [shippingSubdivision,setShippingSubdivision] = useState('');
-const [shippingOptions,setShippingOptions] = useState([]);
-const [shippingOption,setShippingOption] = useState('');
+    const [shippingCountries,setShippingCountries] = useState([]);
+    const [shippingCountry,setShippingCountry] = useState('');
+    const [shippingSubdivisions,setShippingSubdivisions] = useState([]);
+    const [shippingSubdivision,setShippingSubdivision] = useState('');
+    const [shippingOptions,setShippingOptions] = useState([]);
+    const [shippingOption,setShippingOption] = useState('');
 
-  const methods = useForm();
+    const methods = useForm();
 
   return (
     <>

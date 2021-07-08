@@ -14,7 +14,12 @@ const Checkout = () => {
   return (
     <>
       <div className={classes.toolbar}></div>
-      <main></main>
+      <main className={classes.layout}>
+        <Paper className={classes.paper}>
+          <Typography variant="h4" align="center"></Typography>
+          <Stepper avtiveStep={0} className={classes.stepper}></Stepper>
+        </Paper>
+      </main>
     </>
   );
 };

@@ -9,10 +9,12 @@ import {
   Divider,
   Button,
 } from "@material-ui/core";
+import { useState } from "react";
 
 const steps = ["Shipping address", "Payment details"];
 
 const Checkout = () => {
+  const [activeStep, setActiveStep] = useState(0);
   return (
     <>
       <div className={classes.toolbar}></div>

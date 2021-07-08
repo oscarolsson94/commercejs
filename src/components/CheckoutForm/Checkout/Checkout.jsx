@@ -18,13 +18,16 @@ import { useEffect } from "react";
 
 const steps = ["Shipping address", "Payment details"];
 
-const Checkout = () => {
+const Checkout = ({ cart }) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     const generateToken = async () => {
       try {
+        const token = await commerce.checkout.generateToken(cart.id, {
+          type: "cart",
+        });
       } catch (error) {}
     };
   }, []);

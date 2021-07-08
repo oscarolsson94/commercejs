@@ -10,6 +10,8 @@ import {
   Button,
 } from "@material-ui/core";
 
+const steps = ["Shipping address", "Payment details"];
+
 const Checkout = () => {
   return (
     <>
@@ -17,7 +19,13 @@ const Checkout = () => {
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography variant="h4" align="center"></Typography>
-          <Stepper avtiveStep={0} className={classes.stepper}></Stepper>
+          <Stepper avtiveStep={0} className={classes.stepper}>
+            {steps.map((step) => (
+              <Step key={step}>
+                <StepLabel>{step}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
         </Paper>
       </main>
     </>

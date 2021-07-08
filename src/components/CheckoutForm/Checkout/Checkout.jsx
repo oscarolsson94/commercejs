@@ -9,16 +9,25 @@ import {
   Divider,
   Button,
 } from "@material-ui/core";
+import { commerce } from "../../../lib/commerce";
 import { useState } from "react";
 import useStyles from "./styles";
 import AddressForm from "../AddressForm";
 import PaymentForm from "../PaymentForm";
+import { useEffect } from "react";
 
 const steps = ["Shipping address", "Payment details"];
 
 const Checkout = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const generateToken = async () => {
+      try {
+      } catch (error) {}
+    };
+  }, []);
 
   const Confirmation = () => <div>Confirmation</div>;
 

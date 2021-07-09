@@ -13,7 +13,7 @@ import FormInput from "./CustomTextField";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const AddressForm = ({ checkoutToken }) => {
+const AddressForm = ({ checkoutToken, next }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState("");
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
@@ -79,8 +79,19 @@ const AddressForm = ({ checkoutToken }) => {
       <Typography variant="h6" gutterBottom>
         Shipping Address
       </Typography>
-      <FormProvider {...methods}> {/* methods from react-hook-form */}
-        <form onSubmit={methods.handleSubmit((data) =>  }>
+      <FormProvider {...methods}>
+        {" "}
+        {/* methods from react-hook-form */}
+        <form
+          onSubmit={methods.handleSubmit((data) =>
+            next({
+              ...data,
+              shippingCountry,
+              shippingSubdivision,
+              shippingOption,
+            })
+          )}
+        >
           <Grid container spacing={3}>
             <FormInput required name="firstName" label="First name" />
             <FormInput required name="lastName" label="Last name" />

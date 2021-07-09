@@ -8,6 +8,8 @@ import {
 import { loadStripe } from "@stripe/stripe-js";
 import Review from "./Review";
 
+const stripePromise = loadStripe("...");
+
 const PaymentForm = ({ checkoutToken }) => {
   return (
     <>
@@ -16,6 +18,9 @@ const PaymentForm = ({ checkoutToken }) => {
       <Typography variant="h6" gutterBottom style={{ margin: "20px 0" }}>
         Payment method
       </Typography>
+      <Elements stripe={stripePromise}>
+        <ElementsConsumer>{}</ElementsConsumer>
+      </Elements>
     </>
   );
 };

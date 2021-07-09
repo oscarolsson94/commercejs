@@ -11,6 +11,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { commerce } from "../../lib/commerce"; /* this instance makes it possible to use all the features of commercejs */
 import FormInput from "./CustomTextField";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AddressForm = ({ checkoutToken }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
@@ -142,6 +143,15 @@ const AddressForm = ({ checkoutToken }) => {
               </Select>
             </Grid>
           </Grid>
+          <br />
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Button component={Link} to="/cart" variant="outlined">
+              Back to Cart
+            </Button>
+            <Button type="submit" variant="contained" color="primary">
+              Next
+            </Button>
+          </div>
         </form>
       </FormProvider>
     </>

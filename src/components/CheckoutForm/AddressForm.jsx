@@ -12,20 +12,22 @@ import { commerce } from "../../lib/commerce"; /* this instance makes it possibl
 import FormInput from "./CustomTextField";
 
 const AddressForm = () => {
-    const [shippingCountries,setShippingCountries] = useState([]);
-    const [shippingCountry,setShippingCountry] = useState('');
-    const [shippingSubdivisions,setShippingSubdivisions] = useState([]);
-    const [shippingSubdivision,setShippingSubdivision] = useState('');
-    const [shippingOptions,setShippingOptions] = useState([]);
-    const [shippingOption,setShippingOption] = useState('');
+  const [shippingCountries, setShippingCountries] = useState([]);
+  const [shippingCountry, setShippingCountry] = useState("");
+  const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
+  const [shippingSubdivision, setShippingSubdivision] = useState("");
+  const [shippingOptions, setShippingOptions] = useState([]);
+  const [shippingOption, setShippingOption] = useState("");
 
-    const methods = useForm();
+  const methods = useForm();
 
-    const fetchShippingCountries = async (checkoutTokenId) => {
-        const {countries} = await commerce.services.localeListShippingCountries(checkoutTokenId);
+  const fetchShippingCountries = async (checkoutTokenId) => {
+    const { countries } = await commerce.services.localeListShippingCountries(
+      checkoutTokenId
+    );
 
-        setShippingCountries(countries);
-    }
+    setShippingCountries(countries);
+  };
 
   return (
     <>
@@ -42,7 +44,7 @@ const AddressForm = () => {
             <FormInput required name="city" label="City" />
             <FormInput required name="zip" label="ZIP / Postal code" />
             {/* DYNAMIC SELECT LIST, OPTIONS DEPENDING ON EACHOTHER */}
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
                 <InputLabel>Shipping Country</InputLabel>
                 <Select value={} fullWidth onChange={}>
                     <MenuItem key={} value={}>
@@ -65,7 +67,7 @@ const AddressForm = () => {
                         Select Me
                     </MenuItem>
                 </Select>
-            </Grid>
+            </Grid> */}
           </Grid>
         </form>
       </FormProvider>

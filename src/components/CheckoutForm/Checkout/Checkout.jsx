@@ -33,6 +33,8 @@ const Checkout = ({ cart }) => {
         setCheckoutToken(token);
       } catch (error) {}
     };
+
+    generateToken();
   }, []);
 
   const Confirmation = () => <div>Confirmation</div>;

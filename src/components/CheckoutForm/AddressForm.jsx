@@ -22,8 +22,6 @@ const AddressForm = ({ checkoutToken }) => {
 
   const methods = useForm();
 
-  const countries = Object.entries(shippingCountries).map(([code, name]) => ({id: code, labe: name}));
-
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(
       checkoutTokenId
@@ -55,13 +53,22 @@ const AddressForm = ({ checkoutToken }) => {
             <FormInput required name="zip" label="ZIP / Postal code" />
             {/* DYNAMIC SELECT LIST, OPTIONS DEPENDING ON EACHOTHER */}
             <Grid item xs={12} sm={6}>
-                <InputLabel>Shipping Country</InputLabel>
-                <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
-                    {} {/* Array of arrays */}
-                    <MenuItem key={} value={}>
-                        Select Me
+              <InputLabel>Shipping Country</InputLabel>
+              <Select
+                value={shippingCountry}
+                fullWidth
+                onChange={(e) => setShippingCountry(e.target.value)}
+              >
+                {Object.entries(
+                  shippingCountries
+                ) /* Array of arrays mapped into array of objects */
+                  .map(([code, name]) => ({ id: code, label: name }))
+                  .map((item) => (
+                    <MenuItem key={item.id} value={item.id}>
+                      {item.label}
                     </MenuItem>
-                </Select>
+                  ))}
+              </Select>
             </Grid>
             {/* <Grid item xs={12} sm={6}>
                 <InputLabel>Shipping Subdivision</InputLabel>

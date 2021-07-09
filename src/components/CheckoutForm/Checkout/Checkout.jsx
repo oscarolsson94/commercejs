@@ -38,8 +38,14 @@ const Checkout = ({ cart }) => {
     generateToken();
   }, [cart]);
 
+  const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+
+  const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
+
   const next = (data) => {
     setShippingData(data);
+
+    nextStep();
   };
 
   const Confirmation = () => <div>Confirmation</div>;

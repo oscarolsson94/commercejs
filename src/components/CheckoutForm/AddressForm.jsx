@@ -130,9 +130,9 @@ const AddressForm = ({ checkoutToken }) => {
                 onChange={(e) => setShippingOption(e.target.value)}
               >
                 {shippingOptions
-                  .map((sO) => ({
-                    id: sO.id,
-                    label: `${sO.description} - (${sO.price.formatted_with_symbol})`,
+                  .map((option) => ({
+                    id: option.id,
+                    label: `${option.description} - (${option.price.formatted_with_symbol})`,
                   }))
                   .map((item) => (
                     <MenuItem key={item.id} value={item.id}>

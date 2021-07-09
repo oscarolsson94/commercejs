@@ -79,8 +79,8 @@ const AddressForm = ({ checkoutToken }) => {
       <Typography variant="h6" gutterBottom>
         Shipping Address
       </Typography>
-      <FormProvider {...methods}>
-        <form onSubmit="">
+      <FormProvider {...methods}> {/* methods from react-hook-form */}
+        <form onSubmit={methods.handleSubmit((data) =>  }>
           <Grid container spacing={3}>
             <FormInput required name="firstName" label="First name" />
             <FormInput required name="lastName" label="Last name" />
@@ -145,7 +145,12 @@ const AddressForm = ({ checkoutToken }) => {
           </Grid>
           <br />
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <Button component={Link} to="/cart" variant="outlined">
+            <Button
+              component={Link}
+              to="/cart"
+              variant="outlined"
+              color="secondary"
+            >
               Back to Cart
             </Button>
             <Button type="submit" variant="contained" color="primary">

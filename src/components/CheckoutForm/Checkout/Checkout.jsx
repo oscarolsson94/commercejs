@@ -37,6 +37,8 @@ const Checkout = ({ cart }) => {
     generateToken();
   }, [cart]);
 
+  const next = (data) => {};
+
   const Confirmation = () => <div>Confirmation</div>;
 
   const Form = () =>

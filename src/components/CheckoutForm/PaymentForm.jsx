@@ -22,6 +22,12 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
       type: "card",
       card: cardElement,
     });
+
+    if (error) {
+      console.log(error);
+    } else {
+      const orderData = {};
+    }
   };
 
   return (

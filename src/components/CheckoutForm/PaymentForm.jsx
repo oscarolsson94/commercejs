@@ -33,6 +33,14 @@ const PaymentForm = ({ checkoutToken, backStep }) => {
           lastname: shippingData.lastName,
           email: shippingData.email,
         },
+        shipping: {
+          name: "Primary",
+          street: shippingData.address,
+          town_city: shippingData.city,
+          county_state: shippingData.shippingSubdivision,
+          postal_zip_code: shippingData.zip,
+          country: shippingData.shippingCountry,
+        },
       };
     }
   };

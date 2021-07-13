@@ -91,7 +91,12 @@ const App = () => {
             />
           </Route>
           <Route exact path="/checkout">
-            <Checkout cart={cart} />
+            <Checkout
+              cart={cart}
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              error={errorMessage}
+            />
           </Route>
         </Switch>
       </div>

@@ -8,7 +8,7 @@ By doing this, you will use a "fake" credit card in order to see the entire flow
 After the purchase, both the buyer and seller will receive confirmation emails containing information regarding the purchase. 
 Enter your valid email adress to receive the email.
 
-The website is deployed to Netflify.
+The website is deployed to Netflify @ oscar-ecommerce.netlify.app/
 
 
 # Getting Started with Create React App

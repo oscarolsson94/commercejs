@@ -6,16 +6,17 @@ import {
   ElementsConsumer,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+
 import Review from "./Review";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const PaymentForm = ({
   checkoutToken,
-  shippingData,
-  backStep,
-  onCaptureCheckout,
   nextStep,
+  backStep,
+  shippingData,
+  onCaptureCheckout,
 }) => {
   const handleSubmit = async (event, elements, stripe) => {
     event.preventDefault();
@@ -30,7 +31,7 @@ const PaymentForm = ({
     });
 
     if (error) {
-      console.log(error);
+      console.log("[error]", error);
     } else {
       const orderData = {
         line_items: checkoutToken.live.line_items,
@@ -40,8 +41,8 @@ const PaymentForm = ({
           email: shippingData.email,
         },
         shipping: {
-          name: "Primary",
-          street: shippingData.address,
+          name: "International",
+          street: shippingData.address1,
           town_city: shippingData.city,
           county_state: shippingData.shippingSubdivision,
           postal_zip_code: shippingData.zip,
@@ -76,7 +77,7 @@ const PaymentForm = ({
               <CardElement />
               <br /> <br />
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <Button onClick={backStep} variant="outlined">
+                <Button variant="outlined" onClick={backStep}>
                   Back
                 </Button>
                 <Button

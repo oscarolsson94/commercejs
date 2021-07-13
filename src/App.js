@@ -62,6 +62,7 @@ const App = () => {
         newOrder
       );
       setOrder(incomingOrder);
+      refreshCart();
     } catch (error) {}
   };
 

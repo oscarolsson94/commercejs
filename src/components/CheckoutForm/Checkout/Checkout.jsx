@@ -58,6 +58,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
         shippingData={shippingData}
         checkoutToken={checkoutToken}
         backStep={backStep}
+        nextStep={nextStep}
         onCaptureCheckout={onCaptureCheckout}
       />
     );

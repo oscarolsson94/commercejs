@@ -23,6 +23,10 @@ const PaymentForm = ({ checkoutToken }) => {
           {({ elements, stripe }) => (
             <form>
               <CardElement />
+              <br /> <br />
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <Button variant="outlined">Back</Button>
+              </div>
             </form>
           )}
         </ElementsConsumer>

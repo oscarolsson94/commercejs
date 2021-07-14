@@ -2,7 +2,7 @@
 Entire flow of an e-commerce store.  Built in react.js, utilizing the commercejs framework to handle most of the backend. You can add to and remove things from the cart, as well as empty it completely. 
 
 You can also complete an end to end purchase. 
-To make a test purchase, enter: "4242 4242 4242 4242,  0/4 24 242 42424" (this is the same as just spaming 42 in the card number field) as the credit card information. 
+To make a test purchase, enter: "4242 4242 4242 4242,  0/4 24 242 42424" (this is the same as just spamming 42 in the card number field) as the credit card information. 
 By doing this, you will use a "fake" credit card in order to see the entire flow of the site. 
 
 After the purchase, both the buyer and seller will receive confirmation emails containing information regarding the purchase. 
